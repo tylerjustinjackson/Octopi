@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/validation.js" defer></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="js/validation.js" defer></script>
+
+</head>
+
+<body>
+    <div class="signup-page">
+
+        <div class="form">
+            <p id="pi">Octopπ</p>
+            <form class="centeralign colorchangeid" action="process-signup.php" method="post" id="signup">
+                <div>
+                    <h1>Signup</h1>
+
+                    <div>
+                        <label for="Username">Username</label>
+                        <input type="username" id="Username" name="Username">
+                    </div>
+
+                    <div class="border">
+                        <label for="Email">Email</label>
+                        <input class="border" type="Email" id="Email" name="Email">
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+
+                    <div>
+                        <label for="passwordconfirmation">Repeat Password</label>
+                        <input type="password" id="passwordconfirmation" name="passwordconfirmation">
+                    </div>
+
+                    <button>Sign Up</button>
+
+                    <div>
+                        <form action="login.php">
+                            <p>Already have an account?</p>
+                            <button>Login</button>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
