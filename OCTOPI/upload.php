@@ -4,10 +4,10 @@ if (isset($_POST['submit']) && isset($_FILES['imagepost'])) {
 	require "databaseposts.php";
     $db = mysqli_connect($sname, $uname, $password, $db_name);
 
-	echo "<pre>";
-	print_r($_FILES['imagepost']);
-	echo "</pre>";
-
+	// echo "<pre>";
+	// print_r($_FILES['imagepost']);
+	// echo "</pre>";
+    
 	$img_name = $_FILES['imagepost']['name'];
 	$img_size = $_FILES['imagepost']['size'];
 	$tmp_name = $_FILES['imagepost']['tmp_name'];
@@ -16,14 +16,14 @@ if (isset($_POST['submit']) && isset($_FILES['imagepost'])) {
     $name = $_POST['name'];
 
 	if ($error === 0) {
-		if ($img_size > 125000) {
+		if ($img_size > 1000000000) {
 			$em = "Sorry, your file is too large.";
 		    header("Location: index.php?error=$em");
 		}else {
 			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
 			$img_ex_lc = strtolower($img_ex);
 
-			$allowed_exs = array("jpg", "jpeg", "png"); 
+			$allowed_exs = array("jpg", "jpeg", "png", "PNG"); 
             
 			if (in_array($img_ex_lc, $allowed_exs)) {
 				$new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
@@ -35,6 +35,7 @@ if (isset($_POST['submit']) && isset($_FILES['imagepost'])) {
 				$sql = "INSERT INTO posts(username, picture, caption) 
 				        VALUES('$name','$new_img_name','$caption')";
 				mysqli_query($db, $sql);
+                header("Location: index.php");
 			}else {
 				$em = "You can't upload files of this type";
 		        header("Location: index.php?error=$em");

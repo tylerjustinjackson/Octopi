@@ -48,8 +48,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php if($is_invalid): ?>
         <em>Invalid Login</em>
     <?php endif; ?>
+    <img src="logo.PNG" class="banner" alt="">
     <div class="form">
-    <h1 id="pi">Login</h1>
+    <h1 id="pi"class="whitecolor">Login</h1>
         <form method="post" class="colorchangeid">
 
                 <label for="Username">Username</label>
@@ -59,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password">
 
-            <button>Log in</button>
+            <button class="colorgreen">Log in</button>
         </form>
     </div>
 </body>
