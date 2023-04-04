@@ -47,7 +47,7 @@ $stmt->bind_param("sss",
                 $password_hash);
 
 if ($stmt->execute()) {
-    header("Location: signup-sucess.html");
+    header("Location: index.php");
     exit;
 
 } else {
